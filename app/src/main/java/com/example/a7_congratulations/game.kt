@@ -15,10 +15,14 @@ class game : AppCompatActivity() {
         setContentView(R.layout.activity_game)
        var contados=3
         var si=Random()
+        var numeros1=7
+        var numeros2=7
+        var numeros3=7
 
 
         val number1:TextView=findViewById(R.id.img_b_1)
         val reintentar:ImageButton=findViewById(R.id.buton_reintentar)
+        val felicidades: ImageButton=findViewById(R.id.automatico)
         val contamelo:TextView=findViewById(R.id.CONTADOR)
         val number2:TextView=findViewById(R.id.img_b_2)
         val number3:TextView=findViewById(R.id.img_b_3)
@@ -77,6 +81,16 @@ class game : AppCompatActivity() {
         who.setOnClickListener {
             val intent= Intent(this,name::class.java)
             startActivity(intent)
+        }
+
+
+        felicidades.setOnClickListener {
+            number1.text=numeros1.toString()
+            number2.text=numeros2.toString()
+            number3.text=numeros3.toString()
+            plei.visibility= View.GONE
+            reintentar.visibility=View.VISIBLE
+            informacion.setText("FELICIDADES HAS GANADO")
         }
 
 
